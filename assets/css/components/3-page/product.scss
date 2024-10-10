@@ -1,0 +1,270 @@
+// Main ================================
+.main {
+    &_wrap {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+// Product =============================
+.product {
+    padding-bottom: rem(24);
+    width: calc(100% - 284px);
+
+    &_info {
+        background: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: rem(24);
+        filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.08));
+
+
+        &-data {
+            padding: rem(32) rem(30);
+            z-index: 4;
+            position: relative;
+            max-width: 370px;
+        }
+
+        &-title {
+            font-weight: 800;
+            font-size: rem(36);
+            line-height: 1.2;
+            color: #424242;
+        }
+
+        &-box {
+            display: flex;
+            flex-wrap: wrap;
+            margin: rem(25) rem(-6) rem(20);
+
+            p {
+                padding: 6px 12px;
+                margin: rem(6);
+                background: rgba(28, 28, 28, 0.05);
+                border-radius: 3px;
+
+                font-weight: 600;
+                font-size: rem(14);
+                line-height: 1.2;
+                text-align: center;
+                color: #383838;
+            }
+        }
+
+        &-txt {
+            font-weight: 400;
+            font-size: rem(16);
+            line-height: 1.3;
+            color: #424242;
+        }
+
+        &-img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 510px;
+            height: 100%;
+            z-index: 1;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 510px;
+                height: 361px;
+                left: 0;
+                top: 0px;
+                background: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 50%);
+                border-radius: 0px 7px 7px 0px;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 510px;
+                height: 361px;
+                left: 0;
+                top: 0px;
+
+                background: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 50%);
+                border-radius: 0px 7px 7px 0px;
+            }
+
+            img {
+                @include ImgCov;
+            }
+        }
+    }
+}
+
+.review {
+    margin-top: rem(24);
+
+    &_title {
+        font-weight: 800;
+        font-size: rem(28);
+        line-height: 1.2;
+        color: #424242;
+    }
+
+    &_box {
+        margin: rem(24) 0;
+        display: flex;
+        overflow-x: auto;
+        padding-bottom: 15px;
+    }
+
+    &_item {
+        // min-width: calc(33.33% - rem(65));
+        height: calc(100% - rem(60));
+        padding: rem(30) rem(24);
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.08);
+        display: flex;
+        flex-direction: column;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &-date {
+            font-weight: 400;
+            font-size: rem(13);
+            line-height: 1.3;
+            color: #868686;
+        }
+
+        &-title {
+            font-weight: 600;
+            font-size: rem(14);
+            line-height: 1.3;
+            color: #383838;
+            margin: rem(16) 0 rem(6);
+        }
+
+        &-rate {
+            height: 12px;
+            display: block;
+
+            svg {
+                @include ImgCon;
+            }
+        }
+
+        &-user {
+            font-weight: 700;
+            font-size: rem(16);
+            line-height: 1.2;
+            color: #383838;
+            margin: rem(16) 0 rem(12);
+        }
+
+        &-comment {
+            font-weight: 400;
+            font-size: rem(14);
+            line-height: 1.4;
+            color: #5E5E5E;
+        }
+    }
+
+    .swiper {
+        padding-bottom: 40px;
+
+        &-slide {
+            height: unset;
+        }
+
+        &-scrollbar {
+            height: 15px !important;
+            cursor: pointer;
+        }
+
+        &-pagination {
+            display: none;
+        }
+    }
+
+    &_link {
+        font-weight: 700;
+        font-size: rem(16);
+        line-height: 1.2;
+        text-align: center;
+        letter-spacing: -0.01em;
+        color: #FFFFFF;
+        display: block;
+        width: calc(100% - rem(32));
+        max-width: rem(430);
+        margin: 0 auto;
+        background: #F77833;
+        border-radius: 8px;
+        padding: rem(16);
+    }
+}
+
+// Aside ==============================
+.aside {
+    width: 260px;
+
+    &_item {
+        background: #fff;
+        padding: rem(20);
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.08);
+
+        &-title {
+            font-weight: 400;
+            font-size: rem(13);
+            line-height: 1.3;
+
+            color: rgba(56, 56, 56, 0.8);
+        }
+
+        &-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            column-gap: rem(18);
+            margin: rem(10) 0 rem(24);
+        }
+
+        &-card {
+            width: 48px;
+            height: 26px;
+
+            img {
+                @include ImgCon;
+            }
+        }
+
+        &-txt {
+            font-weight: 400;
+            font-size: rem(16);
+            line-height: 1.3;
+            color: #383838;
+            margin-bottom: rem(24);
+
+            a {
+                color: #DD4E00;
+                text-decoration: underline;
+                display: block;
+            }
+        }
+
+        &-buy {
+            background: #F77833;
+            box-shadow: 0px 1px 3px 1px rgba(188, 66, 0, 0.15);
+            border-radius: 8px;
+            display: block;
+            padding: rem(16);
+
+            font-weight: 700;
+            font-size: rem(16);
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+            color: #FFFFFF;
+        }
+    }
+}
