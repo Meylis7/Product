@@ -587,6 +587,61 @@ li {
   .auto_container {
     padding: 0 15px;
   }
+  .header_wrap {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .header .burger {
+    display: block;
+  }
+  .header .burger svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    -o-object-fit: contain;
+  }
+  .header .nav {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+    z-index: 100;
+    -webkit-transition: all 0.2s ease-in-out 0s;
+    transition: all 0.2s ease-in-out 0s;
+    -moz-transition: all 0.2s ease-in-out 0s;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .header .nav.active {
+    top: 0;
+  }
+  .header .nav ul {
+    background: #fff;
+    width: 400px;
+    height: 200px;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    border-radius: 30px;
+  }
+  .header .nav li {
+    margin-right: 0;
+  }
+  .header .mobile_user {
+    display: block;
+  }
   .crumb {
     display: none;
   }
@@ -602,6 +657,9 @@ li {
   .review_box {
     margin-top: 10px;
   }
+  .review .swiper {
+    padding-bottom: 0;
+  }
   .review .swiper-slide {
     width: 85%;
   }
@@ -614,5 +672,22 @@ li {
     line-height: 1.3;
     color: #424242;
     margin-bottom: 10px;
+  }
+}
+@media (max-width: 400px) {
+  .header .nav ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 300px;
+    width: calc(80% - 20px);
+  }
+  .header .nav li {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  .header .nav li:last-child {
+    margin-bottom: 0;
   }
 }
